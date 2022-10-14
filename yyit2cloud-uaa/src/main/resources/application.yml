@@ -13,5 +13,15 @@ spring:
     hibernate:
       ddl-auto: update
 
+yyit2cloud:
+  auth:
+    authorization-server:
+      issuer: http://localhost:${server.port}/
+    cors:
+      allowed-origins: '*'
+      allowed-origin-patterns: '*'
+      allowed-methods: '*'
+      allowed-headers: '*'
+      exposed-headers: '*'
 
 

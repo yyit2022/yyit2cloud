@@ -1,4 +1,4 @@
-package com.yyit.cloud.uaa.security.runner;
+package com.yyit.cloud.uaa.auth.runner;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;

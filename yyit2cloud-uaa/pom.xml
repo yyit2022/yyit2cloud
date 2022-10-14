@@ -26,7 +26,7 @@
 	<properties>
 		<java.version>17</java.version>
 		<spring-security-oauth2-authorization-server.version>0.3.1</spring-security-oauth2-authorization-server.version>
-		<flyway-mysql.version>9.4.0</flyway-mysql.version>
+		<flyway-mysql.version>8.5.8</flyway-mysql.version>
 	</properties>
 	<dependencies>
 		<dependency>

@@ -1,9 +1,11 @@
-package com.yyit.cloud.uaa.security.config;
+package com.yyit.cloud.uaa.auth.config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+import com.yyit.cloud.uaa.auth.properties.AuthorizationServerProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -31,6 +33,7 @@ import java.util.UUID;
  * 授权服务器配置
  */
 @Configuration
+@EnableConfigurationProperties(AuthorizationServerProperties.class)
 public class AuthorizationServerConfiguration {
 
     @Bean
@@ -86,10 +89,10 @@ public class AuthorizationServerConfiguration {
     }
 
     @Bean
-    public ProviderSettings providerSettings() {
+    public ProviderSettings providerSettings(AuthorizationServerProperties properties) {
         // @formatter:off
         return ProviderSettings.builder()
-                .issuer("http://localhost:4000")
+                .issuer(properties.getIssuer())
                 .build();
         // @formatter:on
     }

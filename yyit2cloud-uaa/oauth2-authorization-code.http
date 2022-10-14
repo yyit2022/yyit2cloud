@@ -8,7 +8,7 @@ POST http://localhost:4000/oauth2/token
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic eXlpdDp5eWl0
 
-grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.baidu.com&code=rysQI4IgfhcgsQn1kDSkPxw_7h9uDIIyhtG1ZoOHCMP4E3KY6aj9hM_2BQ_s9IbsWD9jWdve5iOpMwDm1FmPFbdTyRxTxLl38wdRFaX5itklOLjhiulhUgzT70BAVbQg
+grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.baidu.com&code=RBrxGPvJGdG_II_2Fm5_-LDJ5kiV4wi-00NbxWgd_P6N-l7d_QHrBs04T4Jy9mPzy3_SACAVKJQaA2ykhX7Yng4hGIF24CuvG8_VxNfbphNs1srFS3eeKctOmAr8EfYT
 
 ###
 
