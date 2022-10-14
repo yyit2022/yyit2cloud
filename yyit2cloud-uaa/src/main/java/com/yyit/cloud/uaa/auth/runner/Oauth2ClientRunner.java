@@ -8,10 +8,12 @@ import org.springframework.security.oauth2.core.ClientAuthenticationMethod;
 import org.springframework.security.oauth2.core.oidc.OidcScopes;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClient;
 import org.springframework.security.oauth2.server.authorization.client.RegisteredClientRepository;
+import org.springframework.security.oauth2.server.authorization.config.ClientSettings;
 import org.springframework.security.oauth2.server.authorization.config.TokenSettings;
 import org.springframework.stereotype.Component;
 
 import java.time.Duration;
+import java.util.List;
 
 /**
  * 初始化 OAuth2 client
@@ -34,12 +36,21 @@ public class Oauth2ClientRunner implements ApplicationRunner {
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .scope(OidcScopes.OPENID)
+                .scopes(s ->{
+                    s.add("message.read");
+                    s.add("message.write");
+                })
                 .redirectUri("https://www.baidu.com")
+                .clientSettings(ClientSettings.builder()
+                        .requireAuthorizationConsent(true)
+                        .build())
                 .tokenSettings(TokenSettings.builder()
                         .accessTokenTimeToLive(Duration.ofMinutes(5))
                         .refreshTokenTimeToLive(Duration.ofDays(1))
                         .build())
                 .build();
+
+
         // @formatter:on
 
         registeredClientRepository.save(registeredClient);

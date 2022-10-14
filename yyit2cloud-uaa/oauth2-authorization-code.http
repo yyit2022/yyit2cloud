@@ -1,5 +1,5 @@
 
-GET http://localhost:4000/oauth2/authorize?client_id=yyit&response_type=code&redirect_uri=https://www.baidu.com&scope=openid
+GET http://localhost:4000/oauth2/authorize?client_id=yyit&response_type=code&redirect_uri=https://www.baidu.com&scope=message.read message.write
 
 ###
 
@@ -8,7 +8,7 @@ POST http://localhost:4000/oauth2/token
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic eXlpdDp5eWl0
 
-grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.baidu.com&code=RBrxGPvJGdG_II_2Fm5_-LDJ5kiV4wi-00NbxWgd_P6N-l7d_QHrBs04T4Jy9mPzy3_SACAVKJQaA2ykhX7Yng4hGIF24CuvG8_VxNfbphNs1srFS3eeKctOmAr8EfYT
+grant_type=authorization_code&redirect_uri=https%3A%2F%2Fwww.baidu.com&code=EKcs6ZZwqExcYVEMxIXGFq5d_mUVMW5T3ils-xpplPm-oCXSXlhOrd0jWxDbjMwUKD0P0SIcLHDxyi4oSuMWB59xXesCqSfztH7bu_D_ev_cLe4QHeo8tqqM0KSUr45S
 
 ###
 
