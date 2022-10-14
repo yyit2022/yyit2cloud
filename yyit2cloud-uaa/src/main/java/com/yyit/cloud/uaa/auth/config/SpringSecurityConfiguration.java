@@ -33,10 +33,13 @@ public class SpringSecurityConfiguration {
                 .authorizeRequests(authorizeRequests ->
 
                         authorizeRequests
-
+                                .antMatchers("/login").permitAll()
                                 .anyRequest().authenticated()
                 )
-                .formLogin(Customizer.withDefaults());
+                .formLogin().loginPage("/login")
+                //.formLogin(Customizer.withDefaults())
+
+        ;
         // @formatter:on
 
         return http.build();
@@ -58,7 +61,7 @@ public class SpringSecurityConfiguration {
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return web -> web.ignoring()
-                .antMatchers("/style/**", "/script/**", "/favicon.ico");
+                .antMatchers("/style/**", "/script/**", "/favicon.ico","/css/**","/webjars/**", "/images/**");
     }
 
 
